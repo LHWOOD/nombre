@@ -1,7 +1,9 @@
 const button1 = document.querySelector("#btn1");
 const button2 = document.querySelector("#btn2");
+const button3 = document.querySelector("#btn3");
 const space = document.querySelector("#here");
 const bgColor = document.querySelector("#body");
+const lastName = "Wood";
 
 const girlOptions = [
   "Olivia",
@@ -31296,6 +31298,10 @@ const handleGirl = function (event) {
   event.preventDefault();
   getGirl();
 };
+const handleAnother = function (event) {
+  event.preventDefault();
+  location.reload();
+};
 
 function getBoy() {
   button1.setAttribute("style", "display: none");
@@ -31304,7 +31310,10 @@ function getBoy() {
 
   const displayBoy = document.createElement("h2");
 
+  displayBoy.textContent = Boy + " " + lastName;
+
   space.appendChild(displayBoy);
+  button3.classList.remove("anotherButton");
 }
 
 function getGirl() {
@@ -31313,9 +31322,11 @@ function getGirl() {
   bgColor.classList.add("female");
 
   const displayGirl = document.createElement("h2");
-
+  displayGirl.textContent = Girl + " " + lastName;
   space.appendChild(displayGirl);
+  button3.classList.remove("anotherButton");
 }
 
 button1.addEventListener("click", handleBoy);
 button2.addEventListener("click", handleGirl);
+button3.addEventListener("click", handleAnother);
