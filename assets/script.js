@@ -1,6 +1,7 @@
 const button1 = document.querySelector("#btn1");
 const button2 = document.querySelector("#btn2");
 const button3 = document.querySelector("#btn3");
+const button4 = document.querySelector("#btn4");
 const space = document.querySelector("#here");
 const bgColor = document.querySelector("#body");
 const lastName = "Wood";
@@ -31282,14 +31283,6 @@ const boyOptions = [
   "Zyran",
 ];
 
-const Girl = girlOptions[Math.floor(Math.random() * girlOptions.length)];
-
-console.log(Girl);
-
-const Boy = boyOptions[Math.floor(Math.random() * boyOptions.length)];
-
-console.log(Boy);
-
 const handleBoy = function (event) {
   event.preventDefault();
   getBoy();
@@ -31298,35 +31291,48 @@ const handleGirl = function (event) {
   event.preventDefault();
   getGirl();
 };
-const handleAnother = function (event) {
-  event.preventDefault();
-  location.reload();
+const handleAnotherB = function (event) {
+  getBoy();
+};
+const handleAnotherG = function (event) {
+  getGirl();
 };
 
 function getBoy() {
+  const Boy = boyOptions[Math.floor(Math.random() * boyOptions.length)];
+
   button1.setAttribute("style", "display: none");
   button2.setAttribute("style", "display: none");
   bgColor.classList.add("male");
+  space.classList.add("kid");
 
+  const box = document.createElement("div");
   const displayBoy = document.createElement("h2");
 
   displayBoy.textContent = Boy + " " + lastName;
-
-  space.appendChild(displayBoy);
+  here.appendChild(box);
+  box.appendChild(displayBoy);
   button3.classList.remove("anotherButton");
 }
 
 function getGirl() {
+  const Girl = girlOptions[Math.floor(Math.random() * girlOptions.length)];
+
   button1.setAttribute("style", "display: none");
   button2.setAttribute("style", "display: none");
   bgColor.classList.add("female");
+  space.classList.add("kid");
 
+  const box = document.createElement("div");
   const displayGirl = document.createElement("h2");
+
   displayGirl.textContent = Girl + " " + lastName;
-  space.appendChild(displayGirl);
-  button3.classList.remove("anotherButton");
+  here.appendChild(box);
+  box.appendChild(displayGirl);
+  button4.classList.remove("anotherButton");
 }
 
 button1.addEventListener("click", handleBoy);
 button2.addEventListener("click", handleGirl);
-button3.addEventListener("click", handleAnother);
+button3.addEventListener("click", handleAnotherB);
+button4.addEventListener("click", handleAnotherG);

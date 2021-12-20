@@ -6,7 +6,10 @@ body {
 div {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 25%;
+  /* margin-top: 25%; */
+  margin: 0;
+  padding: 0;
+  max-height: 40px;
 }
 
 .female {
@@ -17,11 +20,17 @@ div {
   background-color: rgb(113, 177, 214);
 }
 
-#here {
+.kid {
   font-size: 25px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: inline;
 }
 
 .anotherButton {
   display: none;
+}
+
+#here {
+  margin: 0;
+  padding: 0;
 }
