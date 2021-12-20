@@ -31284,22 +31284,22 @@ const boyOptions = [
 ];
 
 const handleBoy = function (event) {
-  //   event.preventDefault();
-
   for (let i = 0; i < 15; i++) {
     let Boy = boyOptions[Math.floor(Math.random() * boyOptions.length)];
     getBoy(Boy);
   }
 };
 const handleGirl = function (event) {
-  event.preventDefault();
-  getGirl();
+  for (let i = 0; i < 15; i++) {
+    let Girl = girlOptions[Math.floor(Math.random() * girlOptions.length)];
+    getGirl(Girl);
+  }
 };
 const handleAnotherB = function (event) {
   location.reload();
 };
 const handleAnotherG = function (event) {
-  getGirl();
+  location.reload();
 };
 
 function getBoy(Boy) {
@@ -31311,15 +31311,13 @@ function getBoy(Boy) {
   const box = document.createElement("div");
   const displayBoy = document.createElement("h2");
 
-  displayBoy.textContent = Boy + " " + lastName;
+  displayBoy.textContent = Boy;
   here.appendChild(box);
   box.appendChild(displayBoy);
   button3.classList.remove("anotherButton");
 }
 
-function getGirl() {
-  const Girl = girlOptions[Math.floor(Math.random() * girlOptions.length)];
-
+function getGirl(Girl) {
   button1.setAttribute("style", "display: none");
   button2.setAttribute("style", "display: none");
   bgColor.classList.add("female");
@@ -31328,7 +31326,7 @@ function getGirl() {
   const box = document.createElement("div");
   const displayGirl = document.createElement("h2");
 
-  displayGirl.textContent = Girl + " " + lastName;
+  displayGirl.textContent = Girl;
   here.appendChild(box);
   box.appendChild(displayGirl);
   button4.classList.remove("anotherButton");
