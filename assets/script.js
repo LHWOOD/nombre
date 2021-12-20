@@ -31284,23 +31284,25 @@ const boyOptions = [
 ];
 
 const handleBoy = function (event) {
-  event.preventDefault();
-  getBoy();
+  //   event.preventDefault();
+
+  for (let i = 0; i < 15; i++) {
+    let Boy = boyOptions[Math.floor(Math.random() * boyOptions.length)];
+    getBoy(Boy);
+  }
 };
 const handleGirl = function (event) {
   event.preventDefault();
   getGirl();
 };
 const handleAnotherB = function (event) {
-  getBoy();
+  location.reload();
 };
 const handleAnotherG = function (event) {
   getGirl();
 };
 
-function getBoy() {
-  const Boy = boyOptions[Math.floor(Math.random() * boyOptions.length)];
-
+function getBoy(Boy) {
   button1.setAttribute("style", "display: none");
   button2.setAttribute("style", "display: none");
   bgColor.classList.add("male");
