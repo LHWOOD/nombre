@@ -5,6 +5,7 @@ const button4 = document.querySelector("#btn4");
 const space = document.querySelector("#here");
 const bgColor = document.querySelector("#body");
 const lastName = "Wood";
+const either = document.querySelector("#or");
 
 const girlOptions = [
   "Olivia",
@@ -31307,6 +31308,7 @@ function getBoy(Boy) {
   button2.setAttribute("style", "display: none");
   bgColor.classList.add("male");
   space.classList.add("kid");
+  either.setAttribute("style", "display: none");
 
   const box = document.createElement("div");
   const displayBoy = document.createElement("h2");
@@ -31322,6 +31324,7 @@ function getGirl(Girl) {
   button2.setAttribute("style", "display: none");
   bgColor.classList.add("female");
   space.classList.add("kid");
+  either.setAttribute("style", "display: none");
 
   const box = document.createElement("div");
   const displayGirl = document.createElement("h2");
